@@ -2,6 +2,8 @@
 
 Sistema de Eventos encomendado pela da Morena.
 
+[![Build Status](https://travis-ci.org/Ricardolv/eventex-wttd.svg?branch=master)](https://travis-ci.org/Ricardolv/eventex-wttd)
+
 ## Como desenvolver ?
 
 1. Clone o repositório.
