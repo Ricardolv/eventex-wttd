@@ -3,6 +3,7 @@
 Sistema de Eventos.
 
 [![Build Status](https://travis-ci.org/Ricardolv/eventex-wttd.svg?branch=master)](https://travis-ci.org/Ricardolv/eventex-wttd)
+[![Code Climate](https://codeclimate.com/repos/568e99e5a1a7976cb40005d6/badges/61c905fa16d7e749fdba/gpa.svg)](https://codeclimate.com/repos/568e99e5a1a7976cb40005d6/feed)
 
 ## Como desenvolver ?
 
