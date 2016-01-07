@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 <<<<<<< 90fb275da0f33886ffd51cdd16dcae563d031ac1
 # eventex-wttd
 
 Projeto no ar !!!
 https://eventex-richardluiz.herokuapp.com/
 =======
+=======
+>>>>>>> 5f812abeac4294bf97dedb610f35032ab2c78d9b
 # Eventex
 
 Sistema de Eventos encomendado pela da Morena.
@@ -43,5 +46,9 @@ heroku config:set SECRET_KEY=`python contrib/secret_gen.py`
 heroku config:set DEBUG=False
 # configuro o email
 git push heroku master --force
+<<<<<<< HEAD
 ```
 >>>>>>> Refatoração
+=======
+```
+>>>>>>> 5f812abeac4294bf97dedb610f35032ab2c78d9b
