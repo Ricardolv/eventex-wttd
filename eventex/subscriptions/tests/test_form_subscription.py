@@ -21,8 +21,8 @@ class SubscriptionFormTest(TestCase):
 
     def test_name_must_be_capitized(self):
         """Name must be capitalizaed"""
-        form = self.make_validated_form(name='RICARDO viana')
-        self.assertEqual("Ricardo Viana", form.cleaned_data['name'])
+        form = self.make_validated_form(name='RICARDO Luiz viana')
+        self.assertEqual("Ricardo Luiz Viana", form.cleaned_data['name'])
 
     def test_email_is_0ptional(self):
         """Email is optional"""
@@ -51,7 +51,7 @@ class SubscriptionFormTest(TestCase):
         self.assertListEqual([msg], errors_list)
 
     def make_validated_form(self, **kwargs):
-        valid = dict(name= 'Ricardo Luiz Viana', cpf='12345678901',
+        valid = dict(name='Ricardo Luiz Viana', cpf='12345678901',
                      email='richardluizv@gmail.com', phone='31-98426-0143')
 
         data = dict(valid, **kwargs)

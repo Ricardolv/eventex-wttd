@@ -20,20 +20,22 @@ def empty_form(request):
 
 
 def create(request):
-        form = SubscriptionForm(request.POST)
+    form = SubscriptionForm(request.POST)
 
-        if not form.is_valid():
-            return render(request, 'subscriptions/subscription_form.html', {'form': form})
+    if not form.is_valid():
+        return render(request, 'subscriptions/subscription_form.html',
+                      {'form': form})
 
-        subscription = Subscription.objects.create(**form.cleaned_data)
+    subscription = form.save()
 
-        _send_mail('Confirmação de inscrição',
-                   settings.DEFAULT_FROM_EMAIL,
-                   subscription.email,
-                   'subscriptions/subscription_email',
-                   {'subscription': subscription})
+    #send subscription email
+    _send_mail('Confirmação de inscrição',
+               settings.DEFAULT_FROM_EMAIL,
+               subscription.email,
+               'subscriptions/subscription_email',
+               {'subscription': subscription})
 
-        return HttpResponseRedirect(r('subscriptions:detail', subscription.pk))
+    return HttpResponseRedirect(r('subscriptions:detail', subscription.pk))
 
 
 def detail(request, pk):
@@ -48,4 +50,4 @@ def detail(request, pk):
 
 def _send_mail(subject, from_, to, template_name, context):
     body = render_to_string(template_name, context)
-    mail.send_mail(subject, body, from_,  [from_, to])
+    mail.send_mail(subject, body, from_, [from_, to])
