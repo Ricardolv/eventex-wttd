@@ -23,7 +23,7 @@ class Speaker(models.Model):
 class Contact(models.Model):
     EMAIL = 'E'
     PHONE = 'P'
-    
+
     KINDS = (
         (EMAIL, 'E-mail'),
         (PHONE, 'Telefone'),
@@ -34,7 +34,21 @@ class Contact(models.Model):
 
     class Meta:
         verbose_name = 'contato'
-        verbose_name_plural =  'contatos'
+        verbose_name_plural = 'contatos'
 
     def __str__(self):
         return self.value
+
+
+class Talk(models.Model):
+    title = models.CharField('Título',max_length=200)
+    start = models.TimeField('Início', blank=True, null=True)
+    description = models.TextField('Descrição', blank=True)
+    speakers = models.ManyToManyField('Speaker', verbose_name='palestrante', blank=True)
+
+    class Meta:
+        verbose_name = 'palestra'
+        verbose_name_plural = 'palestras'
+
+    def __str__(self):
+        return self.title
