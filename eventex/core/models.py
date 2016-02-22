@@ -44,7 +44,7 @@ class Contact(models.Model):
 
 
 class Talk(models.Model):
-    title = models.CharField('Título',max_length=200)
+    title = models.CharField('Título', max_length=200)
     start = models.TimeField('Início', blank=True, null=True)
     description = models.TextField('Descrição', blank=True)
     speakers = models.ManyToManyField('Speaker', verbose_name='palestrante', blank=True)
